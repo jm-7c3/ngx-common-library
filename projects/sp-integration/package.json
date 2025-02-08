@@ -1,15 +1,21 @@
 {
-  "name": "sp-integration",
+  "name": "@jm-7c3/sp-integration",
   "version": "1.3.0",
   "scripts": {
     "build": "ng build"
   },
   "peerDependencies": {
     "@angular/common": "^19.1.0",
-    "@angular/core": "^19.1.0"
+    "@angular/core": "^19.1.0",
+    "@jm-7c3/common-lib": "^1.7.0",
+    "primeng": "^19.0.2"
   },
   "dependencies": {
     "tslib": "^2.3.0"
   },
-  "sideEffects": false
+  "sideEffects": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jm-7c3/ngx-common-library.git"
+  }
 }
