@@ -1,0 +1,16 @@
+<h2>{{ header() }}</h2>
+
+<div class="mb-2">
+  <ng-container #formContainer />
+</div>
+
+@if (form()) {
+  <div class="text-right">
+    @if (!hideSubmitButton()) {
+      <cl-button class="mr-2" (click)="onSubmit()" color="main" [disabled]="form()!.invalid || form()!.pristine"
+        [label]="submitLabel()" />
+    }
+
+    <cl-button (click)="onCancel()" color="secondary" [label]="cancelLabel()" />
+  </div>
+}

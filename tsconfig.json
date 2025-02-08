@@ -16,6 +16,9 @@
     "moduleResolution": "bundler",
     "importHelpers": true,
     "paths": {
+      "common-lib": [
+        "./dist/common-lib"
+      ],
       "sp-integration": [
         "./dist/sp-integration"
       ]

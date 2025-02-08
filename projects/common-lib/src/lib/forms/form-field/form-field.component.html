@@ -1,0 +1,13 @@
+<div class="field">
+  <label class="block" [class.required]="isRequired()">
+    <ng-content select="ff-label" />
+  </label>
+  <div>
+    <ng-content />
+  </div>
+  @if ((control()?.dirty || control()?.touched) && control()?.errors) {
+    <small class="p-block p-error">
+      <ng-content select="ff-error" />
+    </small>
+  }
+</div>

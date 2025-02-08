@@ -1,0 +1,13 @@
+<p-confirmDialog #general key="general">
+  <ng-template pTemplate="footer">
+    <cl-button class="mr-2" (click)="general.onAccept()" color="primary" icon="pi pi-check" [label]="acceptLabel()" />
+    <cl-button (click)="general.onReject()" color="secondary" icon="pi pi-times" [label]="cancelLabel()" />
+  </ng-template>
+</p-confirmDialog>
+
+<p-confirmDialog icon="pi pi-exclamation-triangle" key="general-warning" #warning>
+  <ng-template pTemplate="footer">
+    <cl-button class="mr-2" (click)="warning.onAccept()" color="primary" icon="pi pi-check" [label]="acceptLabel()" />
+    <cl-button (click)="warning.onReject()" color="secondary" icon="pi pi-times" [label]="cancelLabel()" />
+  </ng-template>
+</p-confirmDialog>

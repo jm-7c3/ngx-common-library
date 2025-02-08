@@ -1,0 +1,20 @@
+<input type="hidden" [value]="value()" />
+<input (change)="onFileSelected($event)" class="file-input" #fileInput type="file" />
+
+@if (isFileSelected()) {
+  @if (readonly()) {
+    <button class="link-button" (click)="onDownload()" type="button">
+      {{ fileName() }}
+    </button>
+  } @else {
+    <div class="flex">
+      <cl-button class="mr-3" [label]="fileName()" />
+      <button class="p-button-danger p-button-rounded p-button-text" (click)="onDelete()" [disabled]="isDisabled()"
+        icon="pi pi-trash" pButton type="button">
+      </button>
+    </div>
+  }
+} @else {
+  <cl-button (click)="onClick()" [disabled]="isDisabled()" [icon]="icon()" [label]="label()" />
+}
+

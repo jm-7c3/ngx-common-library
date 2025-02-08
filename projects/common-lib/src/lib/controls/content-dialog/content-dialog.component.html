@@ -1,0 +1,7 @@
+@if (component()) {
+  <ng-container *ngComponentOutlet="component()" />
+}
+
+<div class="text-right">
+  <cl-button (click)="onClose()" color="secondary" [label]="closeLabel()" />
+</div>

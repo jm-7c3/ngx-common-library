@@ -1,0 +1,19 @@
+<ng-container [formGroup]="formGroup">
+  @for (item of formArray.value; track index; let index = $index) {
+    <div class="flex mb-3">
+      <cl-file-input [formControlName]="index" [directory]="directory()" [icon]="icon()" [label]="label()"
+        (onDownload)="onDownload($event)" [readonly]="readonly()" />
+      @if (!readonly()) {
+        @if (index === 0) {
+          <button class="p-button-rounded p-button-text" (click)="onAdd()" [disabled]="formArray.length >= max()"
+            icon="pi pi-plus" pButton type="button">
+          </button>
+        } @else if (index > 0) {
+          <button class="p-button-rounded p-button-text" (click)="onDelete(index)" icon="pi pi-minus" pButton
+            type="button">
+          </button>
+        }
+      }
+    </div>
+  }
+</ng-container>
