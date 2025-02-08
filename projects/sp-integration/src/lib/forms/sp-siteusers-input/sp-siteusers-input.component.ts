@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, forwardRef, inject, input, signal }
   from '@angular/core';
 import { FormControl, FormsModule, NG_VALIDATORS, NG_VALUE_ACCESSOR,
   ReactiveFormsModule } from '@angular/forms';
-import { BaseFormComponent, FieldOption } from 'common-lib';
+import { BaseFormComponent, FieldOption } from '@jm-7c3/common-lib';
 import { AutoCompleteCompleteEvent, AutoCompleteModule } from 'primeng/autocomplete';
 
 import { SpQueryConfig } from '../../models';
