@@ -1,12 +1,9 @@
 {
   "name": "ngx-common-library",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "release:cl": "cd projects/common-lib && pnpm run build && cd ../.. && cd dist/common-lib && npm pack && npm publish",
+    "release:spi": "cd projects/sp-integration && pnpm run build && cd ../.. && cd dist/sp-integration && npm pack && npm publish"
   },
   "private": true,
   "dependencies": {
