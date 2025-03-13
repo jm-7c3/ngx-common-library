@@ -15,14 +15,14 @@ export class FormDialogService {
 
   onCancel(key: string): Observable<null> {
     return this.clStateService.onStateMessage('form-dialog-cancel').pipe(
-      filter(message => message?.payload.key === key),
+      filter(message => message?.key === key),
       map(() => null)
     );
   }
 
-  onSubmit(key: string): Observable<{key: string, value: any}> {
+  onSubmit(key: string): Observable<any> {
     return this.clStateService.onStateMessage('form-dialog-submit').pipe(
-      filter(message => message?.payload.key === key),
+      filter(message => message?.key === key),
       map(message => message?.payload)
     );
   }
@@ -41,18 +41,18 @@ export class FormDialogService {
     const ref = this.dialogService.open(FormDialogComponent, dialogConfig);
 
     ref.onClose.subscribe(value => {
-      if (value) {
-        this.clStateService.updateStateMessage({
-          key,
-          payload: value,
-          type: 'form-dialog-submit'
-        });
-      } else {
-        this.clStateService.updateStateMessage({
-          key,
-          type: 'form-dialog-cancel'
-        });
-      }
-    });
+        if (value) {
+          this.clStateService.updateStateMessage({
+            key,
+            payload: value,
+            type: 'form-dialog-submit'
+          });
+        } else {
+          this.clStateService.updateStateMessage({
+            key,
+            type: 'form-dialog-cancel'
+          });
+        }
+      });
   }
 }
