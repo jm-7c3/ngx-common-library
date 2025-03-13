@@ -73,6 +73,11 @@ export class SpSiteusersInputComponent extends BaseFormComponent {
     );
   }
 
+  // This is a temporary fix for a PrimeNG issue
+  optionValueFn(option: any): any {
+    return option;
+  }
+
   protected override getForm(): FormControl {
     return new FormControl();
   }
